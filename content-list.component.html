@@ -1,0 +1,8 @@
+<div [style.border]="first ? '2px solid black' : '1px solid black'" style="padding: 10px;">
+  <header> WELCOME TO IPL </header>
+  <img [src]="image" (click)="showContentDetails()" style="width: 100%; cursor: pointer;">
+  <p> description </p>
+  <p><strong>Creator:</strong>  creator </p>
+  <p><strong>Type:</strong>  type </p>
+  <p><strong>Tags:</strong>  tags.join(', ') </p>
+</div>

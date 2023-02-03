@@ -9,8 +9,7 @@
     "test": "ng test",
     "generatecomponent": "ng generate a component",
     "generatepipe": "ng generate a pipe",
-    "generatdirective": "ng generate a directive",
-    "Content-card": "ng generate a component"
+    "generatdirective": "ng generate a directive"
   },
   "private": true,
   "dependencies": {

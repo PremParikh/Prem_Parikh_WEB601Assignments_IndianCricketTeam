@@ -1,9 +1,11 @@
+
 export interface Content {
-  readonly id: number;
   title: string;
+  id: number;
+  Age: number;
   description: string;
-  creator: string;
-  imgURL?: string;
-  type?: string;
-  tags?: string[];
+  name: string;
+  City: string;
+  imgURL:string;
+
 }
