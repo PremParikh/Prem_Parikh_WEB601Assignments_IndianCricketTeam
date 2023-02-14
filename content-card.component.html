@@ -1,0 +1,30 @@
+<p>content-card Page!</p>
+<p>content-card works!</p>
+
+<!--{{displayMyIndex(1)}}-->
+<!--{{displayMyIndex(10)}}-->
+<!--<h1>Welcome to Indian Cricket Team</h1>-->
+<!--<img src="{{CricketListArray.CricketlistConst()[0].imgURL}}">-->
+
+<!--<h1>{{CricketListArray.CricketlistConst()[0].title}}</h1>-->
+
+<!--<h1>{{CricketListArray.CricketlistConst()[0].description}}</h1>-->
+
+<!--<h2>{{CricketListArray.CricketlistConst()[0]["Age"]}}</h2>-->
+<!--<h3>{{CricketListArray.CricketlistConst()[0].name}}</h3>-->
+<!--<h3>{{CricketListArray.CricketlistConst()[0]["City"]}}</h3>-->
+<div class="content-card">
+  <ng-container *ngFor="let content of contents; index as i;">
+    <app-content-card [content]="content"
+                      [ngClass]="{'first-card': i === 0}"
+    ></app-content-card>
+  </ng-container>
+  <div class="content-card" (click)="onImageClick(content.id, content.title)">
+  <h3>{{content.title}}</h3>
+  <h4 *ngIf="content.creator">By {{content.creator}}</h4>
+  <h4 *ngIf="content.type">Type: {{content.type}}</h4>
+  <p *ngIf="content.description">{{content.description}}</p>
+  <ul *ngIf="content.tags && content.tags.length > 0">
+    <li *ngFor="let tag of content.tags">{{tag}}</li>
+  </ul>
+</div>

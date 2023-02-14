@@ -1,13 +1,68 @@
+<!--<!doctype html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+<!--  <meta charset="utf-8">-->
+<!--  <title>PremParikhIndianCricketTeam</title>-->
+<!--  <base href="/">-->
+<!--  <meta name="viewport" content="width=device-width, initial-scale=1">-->
+<!--  <link rel="icon" type="image/x-icon" href="favicon.ico">-->
+<!--  <script src="filters.js"></script>-->
+<!--  <link rel="stylesheet" href="styles.scss">-->
+<!--</head>-->
+<!--<body>-->
+<!--  <app-root></app-root>-->
+<!--  <div class="search-container">-->
+<!--    <input [(ngModel)]="searchTerm">-->
+<!--    <button (click)="search()">Search</button>-->
+<!--  </div>-->
+
+<!--  <div class="result-message" [ngClass]="{'not-found': !isFound, 'found': isFound}">-->
+<!--    {{ resultMessage }}-->
+<!--  </div>-->
+
+<!--  <div *ngFor="let item of contentList">-->
+<!--    <div class="content-card" [ngClass]="{'highlighted': item.title === searchTerm}">-->
+<!--      <h3>{{ item.title }}</h3>-->
+<!--      <p>{{ item.description }}</p>-->
+<!--    </div>-->
+<!--  </div>-->
+
+
+<!--  <h2>All Content</h2>-->
+<!--  <div *ngFor="let item of contentList">-->
+<!--    <div class="content-card" [ngClass]="{'type1': item.type === 'type1', 'type2': item.type === 'type2'}">-->
+<!--    <h3>{{ item.title }}</h3>-->
+<!--    <p>{{ item.description }}</p>-->
+<!--    <p>Type: {{ item.type }}</p>-->
+<!--  </div>-->
+
+<!--  <h2>Type 1</h2>-->
+<!--  <div *ngFor="let item of contentList | filterByType: 'type1'">-->
+<!--    <h3>{{ item.title }}</h3>-->
+<!--    <p>{{ item.description }}</p>-->
+<!--  </div>-->
+
+<!--  <h2>Type 2</h2>-->
+<!--  <div *ngFor="let item of contentList | filterByType: 'type2'">-->
+<!--    <h3>{{ item.title }}</h3>-->
+<!--    <p>{{ item.description }}</p>-->
+<!--  </div>-->
+<!--  </div>-->
+<!--</body>-->
+<!--</html>-->
+
 <!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>PremParikhIndianCricketTeam</title>
+  <title>Assignment1</title>
   <base href="/">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
 </head>
 <body>
-  <app-root></app-root>
+<!-- app-root.component.html -->
+<app-content-list></app-content-list>
+
 </body>
 </html>

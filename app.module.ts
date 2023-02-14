@@ -1,15 +1,15 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { ContentCardComponent } from '../app/helper-files/Content-card';
-
 
 import { AppComponent } from './app.component';
+import { ContentCardComponent } from './content-card/content-card.component';
+import { ContentListComponent } from './content-list/content-list.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ContentCardComponent
-
+    ContentCardComponent,
+    ContentListComponent
   ],
   imports: [
     BrowserModule
@@ -18,3 +18,5 @@ import { AppComponent } from './app.component';
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
+

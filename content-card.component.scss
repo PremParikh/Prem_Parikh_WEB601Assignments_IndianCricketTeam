@@ -1,0 +1,43 @@
+.card {
+  padding: 20px;
+}
+.content-card img {
+  width: 100px;
+  height: 100px;
+  margin: 20px auto;
+  cursor: pointer;
+}
+
+.content-card h3 {
+  font-size: 20px;
+  margin-top: 20px;
+}
+
+.content-card h4 {
+  font-size: 16px;
+  margin-top: 10px;
+}
+
+.content-card p {
+  font-size: 14px;
+  margin-top: 10px;
+  text-align: left;
+}
+
+.content-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 20px 0;
+}
+
+.content-card li {
+  display: inline-block;
+  font-size: 14px;
+  margin-right: 10px;
+}
+.card {
+  margin: 20px;
+}
+.first-card {
+  border: 2px solid black;
+}
