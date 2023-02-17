@@ -1,1 +1,38 @@
 /* You can add global styles to this file, and also import other style files */
+.type1 {
+  background-color: green;
+  color: white;
+}
+
+.type2 {
+  background-color: red;
+  color: white;
+}
+.search-container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.result-message {
+  margin-top: 16px;
+  font-size: 18px;
+}
+
+.not-found {
+  color: red;
+}
+
+.found {
+  color: green;
+}
+
+.content-card {
+  padding: 16px;
+  margin-bottom: 16px;
+}
+
+.highlighted {
+  border: 2px solid yellow;
+  background-color: rgba(255, 255, 0, 0.1);
+}

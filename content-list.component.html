@@ -1,0 +1,47 @@
+<!--&lt;!&ndash;<div [style.border]="first ? '2px solid black' : '1px solid black'" style="padding: 10px;">&ndash;&gt;-->
+<!--&lt;!&ndash;  <header> WELCOME TO IPL </header>&ndash;&gt;-->
+<!--&lt;!&ndash;  <img [src]="image" (click)="showContentDetails()" style="width: 100%; cursor: pointer;">&ndash;&gt;-->
+<!--&lt;!&ndash;  <p> description </p>&ndash;&gt;-->
+<!--&lt;!&ndash;  <p><strong>Creator:</strong>  creator </p>&ndash;&gt;-->
+<!--&lt;!&ndash;  <p><strong>Type:</strong>  type </p>&ndash;&gt;-->
+<!--&lt;!&ndash;  <p><strong>Tags:</strong>  tags.join(', ') </p>&ndash;&gt;-->
+<!--&lt;!&ndash;</div>&ndash;&gt;-->
+
+<!--<div class="content-container">-->
+<!--  <div class="content-card" *ngFor="let content of contents | slice:0:5">-->
+<!--    <div class="content-card" (click)="onImageClick(content.id, content.title)" [ngStyle]="{'border': '1px solid black'}">-->
+<!--      <h2>{{content.title}}</h2>-->
+<!--      <div class="content-card" (click)="onImageClick(content.id, content.title)">-->
+<!--      <p *ngIf="content.description">{{content.description}}</p>-->
+<!--      <h4 *ngIf="content.creator">By {{content.creator}}</h4>-->
+<!--      <h4 *ngIf="content.type">Type: {{content.type}}</h4>-->
+<!--      <p>Name: {{content.name}}</p>-->
+<!--      <p>Age: {{content.age}}</p>-->
+<!--      <p>City: {{content.city}}</p>-->
+<!--      <ul *ngIf="content.tags && content.tags.length > 0">-->
+<!--        <li *ngFor="let tag of content.tags">{{tag}}</li>-->
+<!--      </ul>-->
+<!--    </div>-->
+
+<!--  </div>-->
+<!--  </div>-->
+<!--</div>-->
+
+<!-- <p>content-list works!</p> -->
+<input [(ngModel)]="searchText">
+<button (click)="search(searchText)">Submit</button>
+
+<h3>forLoop with type='Exciting' passed to pipe</h3>
+<div *ngFor="let item of (myContentArray | filterContent:'Exciting'); index as i">
+  <app-content-card  [content]="item"></app-content-card>
+</div>
+
+<h3>forLoop with type='Boring' passed to pipe</h3>
+<div *ngFor="let item of (myContentArray | filterContent:'Boring'); index as i">
+  <app-content-card  [content]="item"></app-content-card>
+</div>
+
+<h3>forLoop with no type passed to pipe</h3>
+<div *ngFor="let item of (myContentArray | filterContent); index as i">
+  <app-content-card  [content]="item"></app-content-card>
+</div>

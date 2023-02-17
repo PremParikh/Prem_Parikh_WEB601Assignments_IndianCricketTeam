@@ -1,0 +1,15 @@
+
+  <div *ngIf="content.id < 5" class="myCard">
+    <p>{{content.id}}</p>
+    <h1>{{content.title}}</h1>
+    <p>{{content.description}}</p>
+    <p>{{content.creator}}</p>
+    <p *ngIf="content.type">{{content.type}}</p>
+    <p *ngIf="content.tags">{{content.tags}}</p>
+    <h2 appHoverAffect>{{ content.type }}</h2>
+    <div class="tags">
+      <span *ngFor="let tag of content.tags" appHoverAffect [hoverProperty]="'fontWeight'">{{ tag }}</span>
+    </div>
+    <img *ngIf="content.imgURL" class="card-img-top" alt="Card image">
+    <img *ngIf="content.imgURL" src="default-image.jpg" class="card-img-top" alt="Default image">
+  </div>
