@@ -1,0 +1,17 @@
+.create-content-card{
+    text-align: center;
+    border: 1px black solid;
+    display: block;
+
+    box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%);
+
+  background-color: #c3d0c4;
+  color: #1c011c;
+  margin: auto;
+  width: 420px;
+  /*border: 3px solid #73AD21;*/
+  padding: 20px;
+}
+.input{
+    margin-top: 10px;
+}
