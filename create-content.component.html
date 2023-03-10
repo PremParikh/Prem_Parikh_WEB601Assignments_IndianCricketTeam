@@ -1,0 +1,12 @@
+<div class="create-content-card">
+
+    <h3>Add a Content</h3>
+
+    <div class="input">Id: <input [(ngModel)]="id"></div>
+    <div class="input">Song Name: <input [(ngModel)]="SongName"></div>
+    <div class="input">Description: <input [(ngModel)]="description"></div>
+    <div class="input">Singer: <input [(ngModel)]="creator"></div>
+    <button class="input" (click)="addContent()">Add new Music</button>
+    <p *ngIf="additionFailed" style="color: red; font-weight: bold;">Failed to add song.</p>
+    <div *ngIf="error" style="color: red; font-weight: bold;">{{ error }}</div>
+</div>

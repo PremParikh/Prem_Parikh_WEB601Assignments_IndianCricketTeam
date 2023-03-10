@@ -1,0 +1,16 @@
+<div class="container">
+    <div class="content-card">
+        <h2>{{content.title}}</h2>
+        <p>{{content.description}}</p>
+        <p>Creator: {{content.creator}}</p>
+        <p appHoverAffect>Type: {{content.type}}</p>
+        <div *ngIf="content.tags">
+            Tags: 
+                <p appHoverAffect [tag]="true" *ngFor="let tag of content.tags, let i = index">
+                    {{i+1}}.{{tag}}
+                </p>
+        </div>
+        <img class="image" *ngIf="content.imgURL" [src]="content.imgURL" alt="{{content.title}}" (click)="click(content.id)">
+        <img class="image" *ngIf="!content.imgURL" src="../../assets/images/default.JPG" alt="{{content.title}}" (click)="click(content.id)">
+      </div>
+</div>

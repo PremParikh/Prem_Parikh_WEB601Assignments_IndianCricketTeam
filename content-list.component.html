@@ -1,0 +1,21 @@
+<div style="margin: 20px">
+  Search Player:
+  <input [(ngModel)]="inputTitle" />
+  <button (click)="searchTitle()">Search</button>
+  <div>
+    <div *ngIf="available" class="available">
+      {{ titleSearchMessage }}
+    </div>
+    <div *ngIf="!available" class="not-available">
+      {{ titleSearchMessage }}
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <app-content-card *ngFor="let item of contents" [content]="item">
+  </app-content-card>
+  
+  <app-content-card *ngFor="let item of contents | contentTypeFilter:'Batsman'" [content]="item">
+  </app-content-card>
+</div>

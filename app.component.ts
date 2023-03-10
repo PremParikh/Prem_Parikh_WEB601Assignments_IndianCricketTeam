@@ -1,28 +1,51 @@
-import { Component } from '@angular/core';
-import { Content } from "src/app/helper-files/content-interface";
+import { Component, OnInit } from '@angular/core';
+import { Content } from './helper-files/content-interface';
+import { IndianCricketService } from './helper-files/indiancricket.service';
+import { MessageService } from './helper-files/message.service';
 
 @Component({
   selector: 'app-root',
-  styleUrls: ['./app.component.scss'],
-  template: `
-    <Content-card></Content-card>`
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.css']
 })
-export class AppComponent {
-  title = 'Prem-Parikh-IndianCricketTeam';
-  name: string = "prem";
-  ContentItem: Content = {
-    id: 1024,
-    title: 'First',
-    description: 'This is my first angular app',
-    creator: 'Prem P',
-    imgURL:
-      'https://angular.io/assets/images/logos/angular/angular.png',
-    type: 'news',
+export class AppComponent implements OnInit {
+  title = 'Pre_Parikh_IndianCricketTeam';
+  contentWithId!: Content;
+  selectedItemId: string = '';
 
+  constructor(private cricketService: IndianCricketService,
+    private messageService: MessageService) {}
 
+  ngOnInit() {
+    this.getTopContent();
   }
 
-  processContent(content: Content): void {
-    console.log(content.description);
+  getTopContent() {
+    const topContentId = 2; // id of the desired top content
+    this.cricketService.fetchContentById(topContentId).subscribe((data) => {
+      this.contentWithId = data;
+    });
+  }
+
+  getSingleContent() {
+    if (!this.selectedItemId) {
+      this.messageService.add('Please enter an item ID.');
+      return;
+    }
+    const id = parseInt(this.selectedItemId);
+    if(isNaN(id) || id < 1){
+      this.messageService.add('Unable to retrieve content with id ' + id);
+    
+    }
+    this.cricketService.fetchContentById(id).subscribe(
+      (item: Content) => {
+        this.contentWithId = item;
+        this.messageService.clear();
+      },
+      (error) => {
+        this.selectedItemId = '';
+        this.messageService.add(`Unable to retrieve item with ID ${this.selectedItemId}.`);
+      }
+    );
   }
 }
