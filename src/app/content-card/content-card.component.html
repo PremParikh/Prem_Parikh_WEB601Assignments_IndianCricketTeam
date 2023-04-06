@@ -1,0 +1,39 @@
+<div class="container">
+<mat-card>
+    <mat-card-header>
+      <mat-card-title>{{ content.title }}</mat-card-title>
+    </mat-card-header>
+<!--        <p>{{content.description}}</p>-->
+    <mat-card-content>
+    <p>{{ content.description }}</p>
+    </mat-card-content>
+    <mat-card-content>
+        <p>Creator: {{content.creator}}</p>
+    </mat-card-content>
+<mat-card-content>
+    <p appHoverAffect>Type: {{content.type}}</p>
+</mat-card-content>
+    <mat-card-content>
+        <div *ngIf="content.tags">
+            Tags:
+                <p appHoverAffect [tag]="true" *ngFor="let tag of content.tags, let i = index">
+                    {{i+1}}.{{tag}}
+                </p>
+        </div>
+      </mat-card-content>
+  <mat-card-actions>
+    <button mat-button (click)="openModifyContentDialog()">{{content.id ? 'Update Content' : 'Add New Content'}}</button>
+  </mat-card-actions>
+
+    <mat-card-actions>
+      <button mat-button (click)="editContent()">Edit</button>
+      <button mat-button color="warn" (click)="deleteContent()">Delete</button>
+    </mat-card-actions>
+
+  <mat-card-actions>
+        <img class="image" *ngIf="content.imgURL" [src]="content.imgURL" alt="{{content.title}}" (click)="click(content.id)">
+        <img class="image" *ngIf="!content.imgURL" src="../../assets/images/default.JPG" alt="{{content.title}}" (click)="click(content.id)">
+
+</mat-card-actions>
+  </mat-card>
+</div>
