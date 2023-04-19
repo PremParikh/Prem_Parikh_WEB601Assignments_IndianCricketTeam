@@ -1,0 +1,22 @@
+<h2 mat-dialog-title>Add {{ data.contentType }}</h2>
+
+
+  <mat-dialog-content (keydown.enter)="addContent()">
+
+  <mat-form-field>
+    <mat-label>Content ID</mat-label>
+    <input matInput placeholder="Enter content ID" disabled [(ngModel)]="content.id">
+  </mat-form-field>
+  <mat-form-field>
+      <input matInput placeholder="Title" [(ngModel)]="title">
+    </mat-form-field>
+    <mat-form-field>
+      <textarea matInput placeholder="Description" [(ngModel)]="description"></textarea>
+    </mat-form-field>
+  </mat-dialog-content>
+
+
+<div mat-dialog-actions>
+  <button mat-button (click)="onCancel()">Cancel</button>
+  <button mat-button color="primary" (click)="onSave()">Save</button>
+</div>
