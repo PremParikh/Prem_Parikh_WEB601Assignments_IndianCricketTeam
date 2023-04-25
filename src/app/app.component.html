@@ -1,0 +1,19 @@
+<div class="container">
+  <div class="searchId">
+    <h1>{{ title }}</h1>
+    <input
+      type="number"
+      [(ngModel)]="selectedItemId"
+      placeholder="Enter item ID"
+    />
+    <button mat-button (click)="submit()">Submit</button>
+    <input matInput type="text" [(ngModel)]="name">
+  </div>
+
+  <div class="content-card-container">
+    <app-content-card [content]="contentWithId"> </app-content-card>
+  </div>
+
+</div>
+
+<app-app-messages></app-app-messages>
